@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess the Number</title>
+  </head>
+  <body>
+    <h1>GUESS THE NUMBER</h1>
+    <div id="Game">
+      <div id="initGameContainer">
+        <p>
+          Le but du jeux est de deviner LE nombre qui sera générer
+          aléatoirement. Tu devras le trouver en effectuant le moins de coup
+          possible.
+          <br />
+          Alors ? Prêt ?
+        </p>
+        <button id="start">Guess the number</button>
+      </div>
+
+      <div id="startGameContainer">
+        <p>J'ai genéré un nombre entre 0 et 500. Essaye de le trouver.</p>
+        <div id="score">Score :</div>
+
+        <label for="number">Ton choix</label>
+        <input type="text" name="number" id="number" placeholder="Ex : 55" />
+
+        <button id="try">Submit</button>
+
+        <div id="displayResponsContainer">
+          <div id="displayRespons"></div>
+          <div id="numberDisplayRespons">
+            <p>0</p>
+            <p>500</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
