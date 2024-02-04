@@ -8,32 +8,46 @@ const submit = document.getElementById("try");
 const responsText = document.getElementById("displayResponsText");
 const score = document.getElementById("score");
 const displayRespons = document.querySelector(".dp");
+const restart = document.getElementById("restart");
+let count = 0;
+
+const getRandomNumber = (max) => {
+  return Math.floor(Math.random() * max);
+};
+let randomNumber = getRandomNumber(501);
+console.log(randomNumber);
+
+const isValidNumber = (num) => {
+  return !Number.isNaN(num) && num >= 0 && num <= 500;
+};
 
 start.addEventListener("click", () => {
   initGame.style.display = "none";
   startGame.style.display = "block";
 });
 
-const getRandomNumber = (max) => {
-  return Math.floor(Math.random() * max);
-};
+submit.addEventListener("click", () => {
+  guessNumber();
+});
 
-const isValidNumber = (num) => {
-  return !Number.isNaN(num) && num >= 0 && num <= 500;
+const restartGame = () => {
+  randomNumber = getRandomNumber(501);
+  console.log(randomNumber);
+  count = 0;
+  score.textContent = "";
+  displayRespons.textContent = "";
+  responsText.textContent = "";
+  restart.style.display = "none";
 };
 
 const guessNumber = () => {
-  const randomNumber = getRandomNumber(501);
-  console.log(randomNumber);
-  let count = 0;
-
-  submit.addEventListener("click", () => {
+  const subtmitHandler = () => {
     const numberChoice = Number(inputNumber.value);
-
+    console.log(numberChoice);
     if (!isValidNumber(numberChoice) || !numberChoice) {
       responsText.style.color = "red";
       responsText.innerHTML = `
-      <p>Veuillez choisir un chiffre entre 0 et 500</p>`;
+      <p>Veuillez choisir un chiffre entre 1 et 500</p>`;
       inputNumber.value = "";
       return;
     }
@@ -71,14 +85,13 @@ const guessNumber = () => {
       displayRespons.style.color = "green";
       displayRespons.textContent = "x";
       displayRespons.style.left = `${numberChoice}px`;
+
+      restart.style.display = "block";
     }
+    score.textContent = `Score : ${count} coup(s)`;
+  };
 
-    score.textContent = `Score : ${count} coups`;
-  });
+  subtmitHandler();
 };
 
-guessNumber();
-
-const restartGame = () => {
-  guessNumber();
-};
+restart.addEventListener("click", restartGame);

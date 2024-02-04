@@ -8,11 +8,12 @@
   </head>
   <body>
     <h1>GUESS THE NUMBER</h1>
+    <h1>?</h1>
     <div id="Game">
       <div id="initGameContainer">
         <p>
           Le but du jeux est de deviner LE nombre qui sera générer
-          aléatoirement. Tu devras le trouver en effectuant le moins de coup
+          aléatoirement. Tu devras le trouver en effectuant le moins de coups
           possible.
           <br />
           Alors ? Prêt ?
@@ -21,21 +22,29 @@
       </div>
 
       <div id="startGameContainer">
-        <p>J'ai genéré un nombre entre 0 et 500. Essaye de le trouver.</p>
+        <div class="explain">
+          <p>J'ai genéré un nombre entre 1 et 500. Essaye de le trouver.</p>
+        </div>
         <div id="score">Score :</div>
-
-        <label for="number">Ton choix</label>
-        <input type="text" name="number" id="number" placeholder="Ex : 55" />
-
-        <button id="try">Submit</button>
+        <div class="number">
+          <label for="number">Ton choix</label>
+          <input type="text" name="number" id="number" placeholder="Ex : 55" />
+        </div>
+        <div class="btnContainer">
+          <button id="try">Essayer !</button>
+        </div>
 
         <div id="displayResponsContainer">
-          <div id="displayResponsText"></div>
+          <div id="displayResponsText"><p>Lorem ipsum dolor sit amet.</p></div>
           <div id="displayRespons"><div class="dp"></div></div>
           <div id="numberDisplayRespons">
             <p>0</p>
             <p>500</p>
           </div>
+        </div>
+
+        <div id="restart">
+          <button>Recommencer</button>
         </div>
       </div>
     </div>

@@ -1,34 +1,54 @@
+@font-face {
+  font-family: "Fresca";
+  src: url(./fonts/Fresca-Regular.ttf);
+}
+
 *{
   margin: 0;
   padding: 0;
+  font-family: "Fresca";
+  box-sizing: border-box;
+}
+
+body{
+  background: #d6dee788;
 }
 
 h1{
   text-align: center;
+  font-size: 4rem;
+  padding-top: 50px;
+  
 }
 
 p{
   line-height: 120%;
-  padding: 5px 15px
+  padding: 5px 15px;
+  font-size: 1.4rem;
   
 }
 
 button{
+  font-size: 1.2rem;
   cursor: pointer;
   background: black;
   color: white;
   border-radius: 10px;
   transition: 0.4s;
+  width: 150px;
+  padding: 5px 0;
+  margin-left: 10px ;
+  margin-top: 5px;
   
 }
 
 button:hover{
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
 
 
 #Game{
-  margin-top: 250px;
+  margin-top: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,14 +66,31 @@ button:hover{
 
 }
 
-#initGameContainer{
-  /* display: none; */
-}
+
 
 #startGameContainer{
   
   display: none;
+  width: 100%;
+}
 
+.explain{
+  display: flex;
+  justify-content: center;
+  
+}
+
+#score{
+  display: flex;
+  justify-content: flex-end;
+  width: 70%;
+  font-size: 1.2rem
+}
+
+label{
+  font-size: 1.2rem;
+  width: 510px;
+  
 }
 
 
@@ -62,7 +99,47 @@ position: relative;
   height: 20px;
   width: 510px;
   border: 1px solid black;
-  
+  border-radius: 20px;
+  background: white;
+}
+
+#displayResponsText{
+  color: transparent;
+}
+
+.number{
+  display: flex;
+  flex-direction: column;
+align-items: center;
+}
+#number{
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 510px;
+  height: 25px;
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.btnContainer{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#try{
+  margin: 10px 0;
+}
+
+#displayResponsContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#displayRespons{
+  margin: 10px 0;
 }
 
 .dp{
@@ -72,6 +149,57 @@ position: relative;
 }
 
 #numberDisplayRespons{
+  display: flex;
+  justify-content: space-between;
   height: 20px;
-  width: 400px;
+  width: 510px;
+  
 }
+
+#numberDisplayRespons p {
+  padding: 0;
+}
+
+#restart{
+  display: none;
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  p{
+    font-size: 1.2rem
+  }
+
+  #number{
+    width: 80%;
+  }
+
+#startGameContainer{
+  width: 80%;
+}
+
+#displayResponsText{
+  width: 350px;
+  text-align: center;
+}
+
+#displayRespons{
+  display: none;
+}
+
+
+label{
+  
+  width: 80%;
+  
+}
+}
+
+ 
