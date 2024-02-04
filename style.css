@@ -47,12 +47,12 @@ button:hover{
 }
 
 #initGameContainer{
-  display: none;
+  /* display: none; */
 }
 
 #startGameContainer{
   
-  /* display: none; */
+  display: none;
 
 }
 
