@@ -193,6 +193,9 @@ align-items: center;
 #displayRespons{
   display: none;
 }
+#numberDisplayRespons {
+  display : none;
+}
 
 
 label{
