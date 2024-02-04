@@ -30,7 +30,7 @@ const guessNumber = () => {
   submit.addEventListener("click", () => {
     const numberChoice = Number(inputNumber.value);
 
-    if (!isValidNumber(numberChoice)) {
+    if (!isValidNumber(numberChoice) || !numberChoice) {
       responsText.style.color = "red";
       responsText.innerHTML = `
       <p>Veuillez choisir un chiffre entre 0 et 500</p>`;
