@@ -134,7 +134,6 @@ const restartGame = () => {
   levelContainer.style.position = "absolute";
   levelContainer.style.left = "50%";
   levelContainer.style.transform = "translate(-50%)";
-  levelContainer.style.bottom = "30%";
   levelContainer.style.height = "400px";
   levelContainer.style.width = "400px";
   levelContainer.style.background = "#d6dee7";
