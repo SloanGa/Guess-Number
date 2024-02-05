@@ -8,6 +8,7 @@
     <link rel="icon" type="image/ico" href="./Favicon/favicon.ico" />
   </head>
   <body>
+    <!-- <img src="./Images/Logo Dev Sloan.svg" alt="Logo Sloan" /> -->
     <h1>GUESS THE NUMBER</h1>
     <h1>?</h1>
     <div id="Game">
@@ -19,17 +20,36 @@
           <br />
           Alors ? Prêt ?
         </p>
-        <button id="start">Guess the number</button>
+        <!-- <button id="start">Guess the number</button> -->
+      </div>
+      <div id="level">
+        <div id="level1">
+          <button>
+            Facile<br />
+            1 à 50
+          </button>
+        </div>
+        <div id="level2">
+          <button>
+            Intermediraire<br />
+            1 à 200
+          </button>
+        </div>
+        <div id="level3">
+          <button>Difficile<br />1 à 500</button>
+        </div>
+        <div id="level4">
+          <button>Cauchemardesque<br />1 à 1000</button>
+        </div>
       </div>
 
       <div id="startGameContainer">
-        <div class="explain">
-          <p>J'ai genéré un nombre entre 1 et 500. Essaye de le trouver.</p>
-        </div>
+        <p class="explain"></p>
+
         <div id="score">Score :</div>
         <div class="number">
           <label for="number">Ton choix</label>
-          <input type="text" name="number" id="number" placeholder="Ex : 55" />
+          <input type="text" name="number" id="number" placeholder="Ex : 50" />
         </div>
         <div class="btnContainer">
           <button id="try">Essayer !</button>
@@ -37,11 +57,6 @@
 
         <div id="displayResponsContainer">
           <div id="displayResponsText"><p>Lorem ipsum dolor sit amet.</p></div>
-          <div id="displayRespons"><div class="dp"></div></div>
-          <div id="numberDisplayRespons">
-            <p>0</p>
-            <p>500</p>
-          </div>
         </div>
 
         <div id="restart">

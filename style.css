@@ -12,12 +12,22 @@
 
 body{
   background: #d6dee788;
+  background: #d6dee7;
+
 }
+
+/* img{
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  opacity: 10%;
+} */
 
 h1{
   text-align: center;
   font-size: 4rem;
   padding-top: 50px;
+ transform: translate();
   
 }
 
@@ -34,7 +44,7 @@ button{
   background: black;
   color: white;
   border-radius: 10px;
-  transition: 0.4s;
+  transition: 0.2s;
   width: 150px;
   padding: 5px 0;
   margin-left: 10px ;
@@ -43,7 +53,9 @@ button{
 }
 
 button:hover{
-  font-size: 1.1rem;
+  background: white;
+  color: black;
+  font-weight: bold;
 }
 
 
@@ -66,6 +78,22 @@ button:hover{
 
 }
 
+#initGameContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#level{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#level button{
+  height: 100px;
+  width: 200px;
+}
+
 
 
 #startGameContainer{
@@ -76,14 +104,15 @@ button:hover{
 
 .explain{
   display: flex;
-  justify-content: center;
-  
+  flex-direction: column;
+  align-items: center;
+  line-height: 50px;
 }
 
 #score{
   display: flex;
   justify-content: flex-end;
-  width: 70%;
+  width: 60%;
   font-size: 1.2rem
 }
 
@@ -91,16 +120,6 @@ label{
   font-size: 1.2rem;
   width: 510px;
   
-}
-
-
-#displayRespons{
-position: relative;
-  height: 20px;
-  width: 510px;
-  border: 1px solid black;
-  border-radius: 20px;
-  background: white;
 }
 
 #displayResponsText{
@@ -142,23 +161,8 @@ align-items: center;
   margin: 10px 0;
 }
 
-.dp{
-  position: absolute;
 
-  
-}
 
-#numberDisplayRespons{
-  display: flex;
-  justify-content: space-between;
-  height: 20px;
-  width: 510px;
-  
-}
-
-#numberDisplayRespons p {
-  padding: 0;
-}
 
 #restart{
   display: none;
@@ -190,11 +194,11 @@ align-items: center;
   text-align: center;
 }
 
-#displayRespons{
-  display: none;
-}
-#numberDisplayRespons {
-  display : none;
+
+
+#level button{
+  height: 100px;
+  width: 150px;
 }
 
 
