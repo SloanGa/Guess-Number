@@ -3,6 +3,8 @@ import "./style.css";
 const initGame = document.getElementById("initGameContainer");
 const startGame = document.getElementById("startGameContainer");
 const explain = document.querySelector(".explain");
+const showAnswer = document.getElementById("showAnswerContainer");
+const listNumber = document.querySelector(".showAnswer");
 const inputNumber = document.getElementById("number");
 const submit = document.getElementById("try");
 const responsText = document.getElementById("displayResponsContainer");
@@ -22,6 +24,13 @@ let startNumber;
 let endNumber;
 let difficult;
 
+document.querySelector("#menu").addEventListener("click", () => {
+  location.reload();
+});
+document.querySelector("#guess").addEventListener("click", () => {
+  location.reload();
+});
+
 const getRandomNumber = (max) => {
   return Math.floor(Math.random() * max);
 };
@@ -38,6 +47,7 @@ levels.forEach((level) => {
     initGame.style.display = "none";
     levelContainer.style.display = "none";
     startGame.style.display = "block";
+    showAnswer.style.display = "flex";
 
     switch (selectedLevel) {
       case "level1":
@@ -122,6 +132,14 @@ const guessNumber = () => {
       restart.style.display = "block";
     }
     score.textContent = `Score : ${count} coup(s)`;
+
+    const liste = document.createElement("div");
+    liste.classList.add("liste");
+    document.querySelector(".showAnswer").appendChild(liste);
+    liste.innerHTML = `
+    <ul>${numberChoice}</ul>
+    
+    `;
   };
   subtmitHandler();
 };

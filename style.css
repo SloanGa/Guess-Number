@@ -8,6 +8,7 @@
   padding: 0;
   font-family: "Fresca";
   box-sizing: border-box;
+  list-style-type: none;
 }
 
 body{
@@ -28,9 +29,17 @@ h1{
   text-align: center;
   font-size: 4rem;
   padding-top: 50px;
- transform: translate();
-  
 }
+
+#menu:hover{
+  cursor: pointer;
+}
+
+#guess:hover{
+  cursor: pointer;
+}
+
+
 
 p{
   line-height: 120%;
@@ -61,7 +70,7 @@ button:hover{
 
 
 #Game{
-  margin-top: 150px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -83,7 +92,12 @@ button:hover{
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  text-align: center;
 }
+
+
 
 #level{
   display: grid;
@@ -102,6 +116,33 @@ button:hover{
   display: none;
   width: 100%;
 }
+
+#showAnswerContainer{
+  display: none;
+  margin-top: 50px;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.showAnswer{
+  margin-top: 20px;
+  max-height: 110px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+}
+
+.liste{
+ margin-top: 10px;
+ width: 100px;
+ text-align: center;
+ font-size: 1.2rem;
+ text-decoration :line-through;
+ 
+}
+
 
 .explain{
   display: flex;
@@ -168,14 +209,25 @@ align-items: center;
 #restart{
   display: none;
   position: absolute;
-  top: 33%;
-  left: 50%;
+  top: 24.5%;
+  left: 49.5%;
   transform: translateX(-50%);
+  margin: 20px 0;
 }
+
+
 
 @media screen and (max-width: 600px) {
   h1 {
     font-size: 2rem;
+  }
+
+  #guess{
+    padding-top: 20px;
+  }
+
+  h2{
+    font-size: 1.2rem;
   }
 
   p{
@@ -184,6 +236,7 @@ align-items: center;
 
   #number{
     width: 80%;
+    margin-top: 10px;
   }
 
 #startGameContainer{
@@ -193,6 +246,11 @@ align-items: center;
 #displayResponsText{
   width: 350px;
   text-align: center;
+}
+#displayResponsContainer{
+  width: 350px;
+  align-items: start;
+  margin-top: 20px;
 }
 
 
@@ -208,6 +266,32 @@ label{
   width: 80%;
   
 }
+
+.showAnswer{
+ display: flex;
+  align-items: center; 
+}
+
+.liste{
+  font-size: 1.1rem;
+  max-width: 13%;
+}
+
+#score{
+  margin-bottom: 10px;
+  justify-content: center
+}
+
+#restart{
+ 
+  top: 14.5%;
+  left: 48.5%;
+  transform: translateX(-50%);
+  margin: 20px 0;
+}
+
+
+
 }
 
  
