@@ -208,10 +208,7 @@ align-items: center;
 
 #restart{
   display: none;
-  position: absolute;
-  top: 24.5%;
-  left: 49.5%;
-  transform: translateX(-50%);
+  text-align: center;
   margin: 20px 0;
 }
 

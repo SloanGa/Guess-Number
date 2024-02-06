@@ -4,7 +4,7 @@ const initGame = document.getElementById("initGameContainer");
 const startGame = document.getElementById("startGameContainer");
 const explain = document.querySelector(".explain");
 const showAnswer = document.getElementById("showAnswerContainer");
-const listNumber = document.querySelector(".showAnswer");
+const listNumber = document.querySelector(".list");
 const inputNumber = document.getElementById("number");
 const submit = document.getElementById("try");
 const responsText = document.getElementById("displayResponsContainer");
@@ -27,9 +27,9 @@ let difficult;
 document.querySelector("#menu").addEventListener("click", () => {
   location.reload();
 });
-document.querySelector("#guess").addEventListener("click", () => {
-  location.reload();
-});
+
+
+
 
 const getRandomNumber = (max) => {
   return Math.floor(Math.random() * max);
@@ -40,6 +40,8 @@ const isValidNumber = (num, min, max) => {
   return !Number.isNaN(num) && num >= min && num <= max;
 };
 
+
+
 levels.forEach((level) => {
   level.addEventListener("click", () => {
     count = 0;
@@ -48,6 +50,8 @@ levels.forEach((level) => {
     levelContainer.style.display = "none";
     startGame.style.display = "block";
     showAnswer.style.display = "flex";
+    
+    
 
     switch (selectedLevel) {
       case "level1":
@@ -128,39 +132,46 @@ const guessNumber = () => {
       <p> Bravo tu as trouvé le chiffre en ${count} coups !</p>
       `;
       inputNumber.value = "";
-
+   
+      
       restart.style.display = "block";
     }
     score.textContent = `Score : ${count} coup(s)`;
-
-    const liste = document.createElement("div");
-    liste.classList.add("liste");
-    document.querySelector(".showAnswer").appendChild(liste);
-    liste.innerHTML = `
-    <ul>${numberChoice}</ul>
     
-    `;
+    
+    
+const liste = document.createElement("div");
+liste.classList.add("liste");
+document.querySelector(".showAnswer").appendChild(liste);
+liste.innerHTML = `
+<ul class = "list">${numberChoice}</ul>
+
+`;
+  
   };
   subtmitHandler();
 };
 const restartGame = () => {
-  levelContainer.style.display = "grid";
-  levelContainer.style.alignItems = "center";
-  levelContainer.style.justifyItems = "center";
-  levelContainer.style.justifyContent = "center";
-  levelContainer.style.alignContent = "center";
-  levelContainer.style.position = "absolute";
-  levelContainer.style.left = "50%";
-  levelContainer.style.transform = "translate(-50%)";
-  levelContainer.style.height = "400px";
-  levelContainer.style.width = "400px";
-  levelContainer.style.background = "#d6dee7";
-  levelContainer.style.zIndex = 2;
+  //levelContainer.style.display = "grid";
+  //levelContainer.style.alignItems = "center";
+  //levelContainer.style.justifyItems = "center";
+  //levelContainer.style.justifyContent = "center";
+  //levelContainer.style.alignContent = "center";
+  //levelContainer.style.position = "absolute";
+  //levelContainer.style.left = "50%";
+  //levelContainer.style.transform = "translate(-50%)";
+  //levelContainer.style.height = "400px";
+  //levelContainer.style.width = "400px";
+  //levelContainer.style.background = "#d6dee7";
+  //levelContainer.style.zIndex = 2;
 
-  startGame.style.display = "none";
-  score.textContent = `Score : `;
-  responsText.textContent = "";
-  restart.style.display = "none";
+ // startGame.style.display = "none";
+  //score.textContent = `Score : `;
+  //responsText.textContent = "";
+  //restart.style.display = "none";
+  //showAnswer.style.display = "none"
+  location.reload();
+  
 };
 
 restart.addEventListener("click", restartGame);
