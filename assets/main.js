@@ -28,9 +28,6 @@ document.querySelector("#menu").addEventListener("click", () => {
   location.reload();
 });
 
-
-
-
 const getRandomNumber = (max) => {
   return Math.floor(Math.random() * max);
 };
@@ -40,8 +37,6 @@ const isValidNumber = (num, min, max) => {
   return !Number.isNaN(num) && num >= min && num <= max;
 };
 
-
-
 levels.forEach((level) => {
   level.addEventListener("click", () => {
     count = 0;
@@ -50,8 +45,6 @@ levels.forEach((level) => {
     levelContainer.style.display = "none";
     startGame.style.display = "block";
     showAnswer.style.display = "flex";
-    
-    
 
     switch (selectedLevel) {
       case "level1":
@@ -132,22 +125,18 @@ const guessNumber = () => {
       <p> Bravo tu as trouvé le chiffre en ${count} coups !</p>
       `;
       inputNumber.value = "";
-   
-      
+
       restart.style.display = "block";
     }
     score.textContent = `Score : ${count} coup(s)`;
-    
-    
-    
-const liste = document.createElement("div");
-liste.classList.add("liste");
-document.querySelector(".showAnswer").appendChild(liste);
-liste.innerHTML = `
+
+    const liste = document.createElement("div");
+    liste.classList.add("liste");
+    document.querySelector(".showAnswer").appendChild(liste);
+    liste.innerHTML = `
 <ul class = "list">${numberChoice}</ul>
 
 `;
-  
   };
   subtmitHandler();
 };
@@ -165,13 +154,12 @@ const restartGame = () => {
   //levelContainer.style.background = "#d6dee7";
   //levelContainer.style.zIndex = 2;
 
- // startGame.style.display = "none";
+  // startGame.style.display = "none";
   //score.textContent = `Score : `;
   //responsText.textContent = "";
   //restart.style.display = "none";
   //showAnswer.style.display = "none"
   location.reload();
-  
 };
 
 restart.addEventListener("click", restartGame);
